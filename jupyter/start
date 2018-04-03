@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+DIR=$(readlink -e $(dirname $0))
+
+docker build -t ralgara/jupyter .
+
+docker run -d \
+    -p 8888:8888 \
+    -v "${DIR}:/home/jovyan/work" \
+    --name jupyter \
+    jupyter/scipy-notebook
