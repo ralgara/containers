@@ -1,11 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env make
 
-DIR=$(readlink -e $(dirname $0))
+build:
+build -t my/jupyter .
 
-docker build -t ralgara/jupyter .
-
-docker run -d \
-    -p 8888:8888 \
-    -v "${DIR}:/home/jovyan/work" \
-    --name jupyter \
-    jupyter/scipy-notebook
+run:
+run -d \
+8888:8888 \
+$HOME:/home/jovyan/work \
+/data:/home/jovyan/data \
+jupyter \
+/scipy-notebook
