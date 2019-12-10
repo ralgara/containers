@@ -8,5 +8,5 @@ run:
 	-p 8888:8888 \
 	-v $(HOME)/git:/home/jovyan/work/git \
 	-v /data:/data \
-	--name my/jupyter \
+	--name jupyter \
 	my/jupyter
