@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook
+FROM jupyter/scipy-notebook
 USER root
 RUN apt-get update
 RUN apt-get -y install graphviz
